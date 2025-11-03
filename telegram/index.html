@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        max-width: 420px;
+        margin: 0 auto;
+        
+        border: 1px solid #222;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 16px;
+        background-color: #1a1a1a;
+        font-size: 18px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .list {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat {
+        display: flex;
+        align-items: center;
+        padding: 10px 14px;
+        border-bottom: 1px solid #1f1f1f;
+    }
+
+    .chat:hover {
+        background-color: #181818;
+        cursor: pointer;
+    }
+
+    .avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: #444;
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .name {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .time {
+        font-size: 13px;
+        color: #888;
+    }
+
+    .message {
+        font-size: 14px;
+        color: #aaa;
+        margin-top: 2px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #111;
+        padding: 10px 0;
+        font-size: 14px;
+        color: #888;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .iems.active {
+        color: #00aaff;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 10px;
+    }
+
+    .icon {
+        width: 90px;
+        overflow: hidden;
+        margin-top: -15px;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .card input {
+        width: 380px;
+        height: 20px;
+        margin-top: 10px;
+        background-color: #444;
+        border-radius: 5px;
+        border: none;
+        padding: 5px 5px 5px 5px;
+        margin-left: 100px;
+    }
+
+    .text1 {
+        padding-top: 3px;
+        font-size: 15px;
+    }
+
+    .second {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .second img {
+        width: 110px;
+        margin-top: -10px;
+    }
+
+    .p1 {
+        font-size: 15px;
+        color: #00aaff;
+    }
+
+    .p2 {
+        margin-right: -20px;
+    }
+
+    .iems img {
+        width: 30px;
+        height: auto;
+    }
+
+    .iems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img1 {
+        border-radius: 100%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="text1">20:15</div>
+        <div><img class="icon" src=""></div>
+    </div>
+    <div class="second">
+        <p class="p1">Изменить</p>
+        <p class="p2">Чаты</p>
+        <img src="">
+        <div class="card">
+            <input type="text" placeholder="Name for order">
+        </div>
+    </div>
+    <div class="list">
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Finder Music|Музыка</span>
+                    <span class="time">12:34</span>
+                </div>
+                <div class="massage">Найти любимую песню!</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Save As Bot -скачать</span>
+                    <span class="time">23:56</span>
+                </div>
+                <div class="massage">Сатива - оригинальный звук</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2156.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">F4</span>
+                    <span class="time">19:33</span>
+                </div>
+                <div class="massage">ахахахахаахха балин</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2155.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Community Zhambul Hub</span>
+                    <span class="time">19:06</span>
+                </div>
+                <div class="massage">Aqay Kenes was accepted to the group</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2154.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Зейнеп</span>
+                    <span class="time">17:44</span>
+                </div>
+                <div class="massage">рахмееет</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">2F4 Web 25/26</span>
+                    <span class="time">15:33</span>
+                </div>
+                <div class="massage">Zhansaya: profile-card-companent</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2158.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">1F-4 archive</span>
+                    <span class="time">09:24</span>
+                </div>
+                <div class="massage">Video</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2159.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Aliya apke</span>
+                    <span class="time">8:38</span>
+                </div>
+                <div class="massage">иа</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">IT girls</span>
+                    <span class="time">08:13</span>
+                    </div>
+                <div class="massage">Erkem:kk</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2157.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Saved Messages</span>
+                    <span class="time">Sun</span>
+                </div>
+                <div class="massage">Video</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2160.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">archive</span>
+                    <span class="time">Sun</span>
+                </div>
+                <div class="massage">10 photos</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2161.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Aruzhan Galymzhankyzy</span>
+                    <span class="time">Sun</span>
+                </div>
+                <div class="massage">https://www.canva.com/design/DAGksSTLIDE...</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2162.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Aidyn</span>
+                    <span class="time">Sat</span>
+                </div>
+                <div class="massage">пасибоо</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2163.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Тrue Mafia</span>
+                    <span class="time">Sat</span>
+                </div>
+                <div class="massage">Попал в кольцо</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2164.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">music #2</span>
+                    <span class="time">Sat</span>
+                </div>
+                <div class="massage">Sailor Song</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2165.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">aqida channel.</span>
+                    <span class="time">Thu</span>
+                </div>
+                <div class="massage">поздравляю всех с праздником.Пусть Аллах...</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2166.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Practice KET</span>
+                    <span class="time">Apr 01</span>
+                </div>
+                <div class="massage">Video message</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2159.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Findvid</span>
+                    <span class="time">Wed</span>
+                </div>
+                <div class="massage">Channel photo updated</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2168.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Эля</span>
+                    <span class="time">Wed</span>
+                </div>
+                <div class="massage">Video</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">FindKino</span>
+                    <span class="time">Wed</span>
+                </div>
+                <div class="massage">Dead Poets Society</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Аяжан</span>
+                    <span class="time">Tue</span>
+                </div>
+                <div class="massage">2 photos</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">HTML_CSS_JS</span>
+                    <span class="time">06.10</span>
+                </div>
+                <div class="massage">HTML_CSS_JS pinned</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">L</span>
+                    <span class="time">1.10</span>
+                </div>
+                <div class="massage">Sticker</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Girls</span>
+                    <span class="time">26.09</span>
+                </div>
+                <div class="massage">History was cleared</div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="avatar" src="/IMG_2170.PNG" style="background-color: rgb(64, 64, 127);"></div>
+            <div class="info">
+                <div class="header">
+                    <span class="name">Zhanasyl</span>
+                    <span class="time">19.09</span>
+                </div>
+                <div class="massage">Incoming Call</div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="iems"><img src="">Контакты</div>
+            <div class="iems"><img src="">Звонки</div>
+            <div class="iems"><img src="">Чаты</div>
+            <div class="iems"><img src="">Настройки</div>
+        </footer>
+</body>
+
+</html>
